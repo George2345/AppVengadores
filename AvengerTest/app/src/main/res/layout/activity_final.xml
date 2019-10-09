@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FinalActivity">
+
+    <Button
+        android:id="@+id/buttonShare"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:text="Compartir"
+        android:textSize="20dp"
+        android:background="#E91E63"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="654dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textViewCongratulations"
+            android:layout_width="match_parent"
+            android:layout_height="111dp"
+            android:gravity="center"
+            android:text=""
+            android:textSize="40dp" />
+
+        <ImageView
+            android:id="@+id/imageViewAvenger"
+            android:layout_width="match_parent"
+            android:layout_height="248dp" />
+
+        <TextView
+            android:id="@+id/textViewAvenger"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:gravity="center"
+            android:text=""
+            android:textSize="40dp" />
+
+        <TextView
+            android:id="@+id/textViewDescripcion"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="18dp" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>
