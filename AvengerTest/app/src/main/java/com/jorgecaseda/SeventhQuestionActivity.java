@@ -14,6 +14,7 @@ public class SeventhQuestionActivity extends AppCompatActivity {
 
     private RadioGroup radioGroup;
     private Button buttonNextQuestion;
+    private Button buttonPreviousQuestion;
 
     private RadioButton radioButton1;
     private RadioButton radioButton2;
@@ -41,7 +42,9 @@ public class SeventhQuestionActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setIcon(R.mipmap.ic_avenger);
 
-        buttonNextQuestion = (Button) findViewById(R.id.buttonNextQuestion1);
+        buttonNextQuestion = (Button) findViewById(R.id.buttonNextQuestion);
+        buttonPreviousQuestion = (Button) findViewById(R.id.buttonPreviousQuestion);
+
         radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
 
         radioButton1 = (RadioButton) findViewById(R.id.radioButton1);
@@ -90,7 +93,12 @@ public class SeventhQuestionActivity extends AppCompatActivity {
             }
         });
 
-
-
+        buttonPreviousQuestion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SeventhQuestionActivity.this, SixthQuestionActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
