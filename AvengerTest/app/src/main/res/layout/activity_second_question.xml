@@ -1,35 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FirstQuestionActivity">
+    android:layout_width="match_parent">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="124dp"
-        tools:layout_editor_absoluteY="168dp">
+        tools:context=".SecondQuestionActivity">
+
+
+        <Button
+            android:id="@+id/buttonPreviousQuestion"
+            android:layout_width="160dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="20dp"
+            android:background="#E91E63"
+            android:text="anterior"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+        <Button
+            android:id="@+id/buttonNextQuestion"
+            android:layout_width="160dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="20dp"
+            android:background="#E91E63"
+            android:text="siguiente"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
+            android:layout_height="224dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@mipmap/avengersmotivacion" />
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="115dp"
-            android:text="¿Qué es lo que más te motiva?"
-            android:textSize="35dp" />
 
         <RadioGroup
             android:id="@+id/radioGroup"
-            android:layout_width="match_parent"
-            android:layout_height="190dp">
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="200dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView">
 
             <RadioButton
                 android:id="@+id/radioButton1"
@@ -59,24 +80,20 @@
                 android:id="@+id/radioButton5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Amor" />
-            <RadioButton
-                android:id="@+id/radioButton6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:text="Mis amigos" />
-
         </RadioGroup>
-    </LinearLayout>
 
-    <Button
-        android:id="@+id/buttonNextQuestion1"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentBottom="true"
-        android:text="siguiente"
-        android:textSize="20dp"
-        android:background="#E91E63"/>
-</RelativeLayout>
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="384dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginLeft="50dp"
+            android:text="¿Qué es lo que más te motiva?"
+            android:textSize="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

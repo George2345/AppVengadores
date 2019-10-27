@@ -17,7 +17,7 @@ public class FirstQuestionActivity extends AppCompatActivity {
 
     private RadioGroup radioGroup;
     private Button buttonNextQuestion;
-
+    private Button buttonPreviousQuestion;
 
     String name = "";
 
@@ -29,7 +29,8 @@ public class FirstQuestionActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setIcon(R.mipmap.ic_avenger);
 
-        buttonNextQuestion = (Button) findViewById(R.id.buttonNextQuestion1);
+        buttonNextQuestion = (Button) findViewById(R.id.buttonNextQuestion);
+        buttonPreviousQuestion = (Button) findViewById(R.id.buttonPreviousQuestion);
         radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
 
         Bundle bundle = getIntent().getExtras();
@@ -51,8 +52,13 @@ public class FirstQuestionActivity extends AppCompatActivity {
             }
         });
 
-
-
+        buttonPreviousQuestion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(FirstQuestionActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
 
