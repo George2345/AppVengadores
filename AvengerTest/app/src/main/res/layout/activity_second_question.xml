@@ -12,25 +12,15 @@
 
 
         <Button
-            android:id="@+id/buttonPreviousQuestion"
-            android:layout_width="160dp"
-            android:layout_height="70dp"
-            android:layout_marginTop="20dp"
-            android:background="#E91E63"
-            android:text="anterior"
-            android:textSize="20dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
-
-        <Button
             android:id="@+id/buttonNextQuestion"
-            android:layout_width="160dp"
+            android:layout_width="0dp"
             android:layout_height="70dp"
             android:layout_marginTop="20dp"
             android:background="#E91E63"
             android:text="siguiente"
             android:textSize="20dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
         <ImageView

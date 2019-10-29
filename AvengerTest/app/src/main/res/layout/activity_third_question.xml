@@ -11,25 +11,15 @@
         tools:context=".ThirdQuestionActivity">
 
         <Button
-            android:id="@+id/buttonPreviousQuestion"
-            android:layout_width="160dp"
-            android:layout_height="70dp"
-            android:layout_marginTop="20dp"
-            android:background="#E91E63"
-            android:text="anterior"
-            android:textSize="20dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
-
-        <Button
             android:id="@+id/buttonNextQuestion"
-            android:layout_width="160dp"
+            android:layout_width="0dp"
             android:layout_height="70dp"
             android:layout_marginTop="20dp"
             android:background="#E91E63"
             android:text="siguiente"
             android:textSize="20dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
         <ImageView
@@ -79,18 +69,19 @@
                 android:id="@+id/radioButton5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Rezas por tu vida" />
+                android:text="Tratas de distraer al enemigo" />
         </RadioGroup>
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="384dp"
             android:layout_height="100dp"
-            android:layout_marginStart="50dp"
-            android:layout_marginLeft="50dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
             android:text="Si te hieren en una emboscada , ¿qué haces?"
             android:textSize="30dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.49"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView" />
 

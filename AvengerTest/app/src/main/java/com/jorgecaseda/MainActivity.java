@@ -14,7 +14,6 @@ import com.jorgecaseda.R;
 public class MainActivity extends AppCompatActivity {
 
     private Button buttonStart;
-    private EditText editTextName;
 
 
     @Override
@@ -26,20 +25,12 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setIcon(R.mipmap.ic_avenger);
 
         buttonStart = (Button) findViewById(R.id.buttonStart);
-        editTextName = (EditText) findViewById(R.id.editTextName);
 
         buttonStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String name = editTextName.getText().toString();
-                if (name != null && !name.isEmpty()){
-                    Intent intent = new Intent(MainActivity.this, FirstQuestionActivity.class);
-                    intent.putExtra("name", name);
-                    startActivity(intent);
-                }
-                else {
-                    Toast.makeText(MainActivity.this, "Introduce a name!", Toast.LENGTH_LONG).show();
-                }
+                Intent intent = new Intent(MainActivity.this, FirstQuestionActivity.class);
+                startActivity(intent);
             }
         });
     }

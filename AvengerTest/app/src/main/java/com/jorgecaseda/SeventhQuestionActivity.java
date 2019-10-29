@@ -14,7 +14,6 @@ public class SeventhQuestionActivity extends AppCompatActivity {
 
     private RadioGroup radioGroup;
     private Button buttonNextQuestion;
-    private Button buttonPreviousQuestion;
 
     private RadioButton radioButton1;
     private RadioButton radioButton2;
@@ -23,16 +22,18 @@ public class SeventhQuestionActivity extends AppCompatActivity {
     private RadioButton radioButton5;
     private RadioButton radioButton6;
 
-    public static final int first = 1;
-    public static final int second = 2;
-    public static final int third = 3;
-    public static final int fourth = 4;
-    public static final int fifth = 5;
-    public static final int sixth = 6;
+    int ironman=0;
+    int capi=0;
+    int blackwidow=0;
+    int blackpanther=0;
+    int hulk=0;
+    int thor=0;
+    int hawkeye=0;
+    int strange=0;
+    int spiderman=0;
+    int starlord=0;
+    int antman=0;
 
-
-
-    String name = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +44,6 @@ public class SeventhQuestionActivity extends AppCompatActivity {
         getSupportActionBar().setIcon(R.mipmap.ic_avenger);
 
         buttonNextQuestion = (Button) findViewById(R.id.buttonNextQuestion);
-        buttonPreviousQuestion = (Button) findViewById(R.id.buttonPreviousQuestion);
 
         radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
 
@@ -56,7 +56,17 @@ public class SeventhQuestionActivity extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
         if(bundle != null){
-            name =bundle.getString("name");
+            ironman = bundle.getInt("ironman");
+            capi = bundle.getInt("capi");
+            blackwidow = bundle.getInt("blackwidow");
+            blackpanther = bundle.getInt("blackpanther");
+            hulk = bundle.getInt("hulk");
+            thor = bundle.getInt("thor");
+            hawkeye = bundle.getInt("hawkeye");
+            strange = bundle.getInt("strange");
+            spiderman = bundle.getInt("spiderman");
+            starlord = bundle.getInt("starlord");
+            antman = bundle.getInt("antman");
         }
 
         buttonNextQuestion.setOnClickListener(new View.OnClickListener() {
@@ -67,37 +77,44 @@ public class SeventhQuestionActivity extends AppCompatActivity {
                 }
                 else{
                     Intent intent = new Intent(SeventhQuestionActivity.this, LoadingActivity.class);
-                    int option = 0;
                     if (radioButton1.isChecked()){
-                        option = 1;
+                        capi++;
+                        ironman++;
+                        blackpanther++;
                     }
                     else if (radioButton2.isChecked()){
-                        option = 2;
+                        ironman++;
+                        strange++;
                     }
                     else if (radioButton3.isChecked()){
-                        option = 3;
+                        hulk++;
+                        thor++;
                     }
                     else if (radioButton4.isChecked()){
-                        option = 4;
+                        hawkeye++;
+                        starlord++;
                     }
                     else if (radioButton5.isChecked()){
-                        option = 5;
+                        blackwidow++;
                     }
                     else if (radioButton6.isChecked()){
-                        option = 6;
+                        blackwidow++;
+                        spiderman++;
+                        antman++;
                     }
-                    intent.putExtra("option", option);
-                    intent.putExtra("name", name);
+                    intent.putExtra("hulk", hulk);
+                    intent.putExtra("thor", thor);
+                    intent.putExtra("antman", antman);
+                    intent.putExtra("starlord", starlord);
+                    intent.putExtra("capi", capi);
+                    intent.putExtra("blackwidow", blackwidow);
+                    intent.putExtra("hawkeye", hawkeye);
+                    intent.putExtra("ironman", ironman);
+                    intent.putExtra("blackpanther", blackpanther);
+                    intent.putExtra("strange", strange);
+                    intent.putExtra("spiderman", spiderman);
                     startActivity(intent);
                 }
-            }
-        });
-
-        buttonPreviousQuestion.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(SeventhQuestionActivity.this, SixthQuestionActivity.class);
-                startActivity(intent);
             }
         });
     }
