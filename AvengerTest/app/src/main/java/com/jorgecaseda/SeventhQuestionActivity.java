@@ -118,4 +118,10 @@ public class SeventhQuestionActivity extends AppCompatActivity {
             }
         });
     }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(SeventhQuestionActivity.this, MainActivity.class);
+        startActivity(intent);
+    }
 }

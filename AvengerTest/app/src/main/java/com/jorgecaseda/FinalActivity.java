@@ -133,6 +133,12 @@ public class FinalActivity extends AppCompatActivity {
             textViexDescription.setText("Seriás el dios del trueno y destrozarías a tus enemigos con tu gran martillo, Mjolnir. Posees una gran fuerza, eres valiente y , lógicamente, los poderes del trueno te dan una gran ventaja en el campo de batalla.");
             mensaje = "SOY THOR!!";
         }
+        else{
+            textViewAvenger.setText("Mantis");
+            imageViewAvenger.setImageResource(R.mipmap.mantis);
+            textViexDescription.setText("Seriás el dios del trueno y destrozarías a tus enemigos con tu gran martillo, Mjolnir. Posees una gran fuerza, eres valiente y , lógicamente, los poderes del trueno te dan una gran ventaja en el campo de batalla.");
+            mensaje = "SOY THOR!!";
+        }
 
         sonido();
 
@@ -160,5 +166,12 @@ public class FinalActivity extends AppCompatActivity {
         if(mediaPlayer != null){
             mediaPlayer.release();
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(FinalActivity.this, MainActivity.class);
+        startActivity(intent);
     }
 }

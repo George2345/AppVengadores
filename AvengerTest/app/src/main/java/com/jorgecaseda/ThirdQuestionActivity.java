@@ -108,4 +108,10 @@ public class ThirdQuestionActivity extends AppCompatActivity {
             }
         });
     }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(ThirdQuestionActivity.this, MainActivity.class);
+        startActivity(intent);
+    }
 }

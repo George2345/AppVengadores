@@ -109,4 +109,10 @@ public class SixthQuestionActivity extends AppCompatActivity {
         });
 
     }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(SixthQuestionActivity.this, MainActivity.class);
+        startActivity(intent);
+    }
 }

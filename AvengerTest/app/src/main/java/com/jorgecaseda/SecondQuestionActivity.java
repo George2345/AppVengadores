@@ -108,4 +108,10 @@ public class SecondQuestionActivity extends AppCompatActivity {
             }
         });
     }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(SecondQuestionActivity.this, MainActivity.class);
+        startActivity(intent);
+    }
 }

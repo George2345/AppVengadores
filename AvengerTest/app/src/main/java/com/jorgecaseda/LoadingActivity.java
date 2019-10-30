@@ -87,5 +87,11 @@ public class LoadingActivity extends AppCompatActivity {
             }
         }, milisegundos);
     }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(LoadingActivity.this, MainActivity.class);
+        startActivity(intent);
+    }
 }
 

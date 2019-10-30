@@ -108,4 +108,10 @@ public class FourthQuestionActivity extends AppCompatActivity {
             }
         });
     }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(FourthQuestionActivity.this, MainActivity.class);
+        startActivity(intent);
+    }
 }
