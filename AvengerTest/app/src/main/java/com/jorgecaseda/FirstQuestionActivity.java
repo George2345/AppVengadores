@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
@@ -17,9 +18,23 @@ public class FirstQuestionActivity extends AppCompatActivity {
 
     private RadioGroup radioGroup;
     private Button buttonNextQuestion;
-    private Button buttonPreviousQuestion;
+    private RadioButton radioButton1;
+    private RadioButton radioButton2;
+    private RadioButton radioButton3;
+    private RadioButton radioButton4;
+    private RadioButton radioButton5;
 
-    String name = "";
+    int ironman=0;
+    int capi=0;
+    int blackwidow=0;
+    int blackpanther=0;
+    int hulk=0;
+    int thor=0;
+    int hawkeye=0;
+    int strange=0;
+    int spiderman=0;
+    int starlord=0;
+    int antman=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,13 +45,14 @@ public class FirstQuestionActivity extends AppCompatActivity {
         getSupportActionBar().setIcon(R.mipmap.ic_avenger);
 
         buttonNextQuestion = (Button) findViewById(R.id.buttonNextQuestion);
-        buttonPreviousQuestion = (Button) findViewById(R.id.buttonPreviousQuestion);
         radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
+        radioButton1 = (RadioButton) findViewById(R.id.radioButton1);
+        radioButton2 = (RadioButton) findViewById(R.id.radioButton2);
+        radioButton3 = (RadioButton) findViewById(R.id.radioButton3);
+        radioButton4 = (RadioButton) findViewById(R.id.radioButton4);
+        radioButton5 = (RadioButton) findViewById(R.id.radioButton5);
 
-        Bundle bundle = getIntent().getExtras();
-        if(bundle != null){
-            name =bundle.getString("name");
-        }
+
 
         buttonNextQuestion.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,20 +61,52 @@ public class FirstQuestionActivity extends AppCompatActivity {
                     Toast.makeText(FirstQuestionActivity.this, "Choose an option!", Toast.LENGTH_LONG).show();
                 }
                 else{
+                    if(radioButton2.isChecked()){
+                        hulk++;
+                        thor++;
+
+                    }
+                    else if(radioButton3.isChecked()){
+                        antman++;
+                        starlord++;
+                    }
+                    else if(radioButton4.isChecked()){
+                        capi++;
+                        blackwidow++;
+                        hawkeye++;
+                    }
+                    else if(radioButton5.isChecked()){
+                        ironman++;
+                        blackpanther++;
+                        strange++;
+                    }
+                    else if(radioButton1.isChecked()){
+                        spiderman++;
+                    }
                     Intent intent = new Intent(FirstQuestionActivity.this, SecondQuestionActivity.class);
-                    intent.putExtra("name", name);
+                    intent.putExtra("hulk", hulk);
+                    intent.putExtra("thor", thor);
+                    intent.putExtra("antman", antman);
+                    intent.putExtra("starlord", starlord);
+                    intent.putExtra("capi", capi);
+                    intent.putExtra("blackwidow", blackwidow);
+                    intent.putExtra("hawkeye", hawkeye);
+                    intent.putExtra("ironman", ironman);
+                    intent.putExtra("blackpanther", blackpanther);
+                    intent.putExtra("strange", strange);
+                    intent.putExtra("spiderman", spiderman);
                     startActivity(intent);
                 }
             }
         });
 
-        buttonPreviousQuestion.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(FirstQuestionActivity.this, MainActivity.class);
-                startActivity(intent);
-            }
-        });
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(FirstQuestionActivity.this, MainActivity.class);
+        startActivity(intent);
     }
 }
 
