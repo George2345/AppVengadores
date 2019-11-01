@@ -16,8 +16,17 @@ public class LoadingActivity extends AppCompatActivity {
 
     private Button buttonResults;
 
-    String name = "";
-    private int option;
+    int ironman=0;
+    int capi=0;
+    int blackwidow=0;
+    int blackpanther=0;
+    int hulk=0;
+    int thor=0;
+    int hawkeye=0;
+    int strange=0;
+    int spiderman=0;
+    int starlord=0;
+    int antman=0;
     public final int DURACION = 3000;
 
     @Override
@@ -33,8 +42,17 @@ public class LoadingActivity extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
         if(bundle != null){
-            name =bundle.getString("name");
-            option = bundle.getInt("option");
+            ironman = bundle.getInt("ironman");
+            capi = bundle.getInt("capi");
+            blackwidow = bundle.getInt("blackwidow");
+            blackpanther = bundle.getInt("blackpanther");
+            hulk = bundle.getInt("hulk");
+            thor = bundle.getInt("thor");
+            hawkeye = bundle.getInt("hawkeye");
+            strange = bundle.getInt("strange");
+            spiderman = bundle.getInt("spiderman");
+            starlord = bundle.getInt("starlord");
+            antman = bundle.getInt("antman");
         }
 
         Toast.makeText(LoadingActivity.this, "Cargando...", Toast.LENGTH_LONG).show();
@@ -44,8 +62,17 @@ public class LoadingActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(LoadingActivity.this, FinalActivity.class);
-                intent.putExtra("option", option);
-                intent.putExtra("name", name);
+                intent.putExtra("hulk", hulk);
+                intent.putExtra("thor", thor);
+                intent.putExtra("antman", antman);
+                intent.putExtra("starlord", starlord);
+                intent.putExtra("capi", capi);
+                intent.putExtra("blackwidow", blackwidow);
+                intent.putExtra("hawkeye", hawkeye);
+                intent.putExtra("ironman", ironman);
+                intent.putExtra("blackpanther", blackpanther);
+                intent.putExtra("strange", strange);
+                intent.putExtra("spiderman", spiderman);
                 startActivity(intent);
             }
         });
@@ -59,6 +86,12 @@ public class LoadingActivity extends AppCompatActivity {
                 buttonResults.setVisibility(View.VISIBLE);
             }
         }, milisegundos);
+    }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(LoadingActivity.this, MainActivity.class);
+        startActivity(intent);
     }
 }
 

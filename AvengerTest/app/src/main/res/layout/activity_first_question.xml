@@ -12,25 +12,15 @@
 
 
         <Button
-            android:id="@+id/buttonPreviousQuestion"
-            android:layout_width="160dp"
-            android:layout_height="70dp"
-            android:layout_marginTop="20dp"
-            android:background="#E91E63"
-            android:text="anterior"
-            android:textSize="20dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
-
-        <Button
             android:id="@+id/buttonNextQuestion"
-            android:layout_width="160dp"
+            android:layout_width="0dp"
             android:layout_height="70dp"
             android:layout_marginTop="20dp"
             android:background="#E91E63"
             android:text="siguiente"
             android:textSize="20dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
         <ImageView
@@ -56,19 +46,19 @@
                 android:id="@+id/radioButton1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Con empatía. Pobrecillo..." />
+                android:text="Entras en pánico" />
 
             <RadioButton
                 android:id="@+id/radioButton2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Estás sangrando tio" />
+                android:text="Atacas al que ha causado la herida" />
 
             <RadioButton
                 android:id="@+id/radioButton3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="JAJAJAJAJA, maricón" />
+                android:text="Le quitas importancia a la situación" />
 
             <RadioButton
                 android:id="@+id/radioButton4"
@@ -80,7 +70,7 @@
                 android:id="@+id/radioButton5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Estoy muy ocupado. Intenta mejorarte" />
+                android:text="Estoy muy ocupado para ayudar" />
 
         </RadioGroup>
 
